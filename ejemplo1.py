@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+
+figure, axes = plt.subplots() 
+circle = plt.Circle((-4, 0 ), 4 ,fill = False ) 
+circle2= plt.Circle((-2, 0 ), 3 ,fill = False ) 
+#axes.set_aspect(1) 
+axes.add_artist( circle )
+axes.add_artist( circle2 )
+axes.set_aspect(1) 
+plt.title( 'Circle' ) 
+plt.xlim( -8 , 8 ) 
+plt.ylim( -4 , 4 ) 
+plt.axhline(0, color="black")
+plt.axvline(0, color="black")
+plt.show() 
