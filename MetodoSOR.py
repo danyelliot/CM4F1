@@ -1,7 +1,5 @@
 import numpy as np
 
-# UN CASO PARTICULAR ES CUANDO W=1 ES EL MÉTODO DE GAUSS-SEIDEL 
-
 def get_D(A):
   D=np.diag(np.diag(A))
   return D
