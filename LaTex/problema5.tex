@@ -1,0 +1,206 @@
+
+\documentclass[11pt]{beamer}
+
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\makeatletter
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+\setbeamerfont{subtitle}{series=\bfseries,size=\Large}
+\setbeamerfont{frametitle}{series=\bfseries,size=\small}
+\setbeamerfont{block title}{series=\bfseries,size=\normalsize}
+\setbeamerfont{footline}{size=\normalsize}
+
+\usebeamercolor{structure}
+\setbeamercolor{normal text}{fg=structure.fg}
+
+
+\addtobeamertemplate{frametitle}{}{\vspace*{-1ex}\rule{\textwidth}{1pt}}
+\setbeamertemplate{itemize items}[circle]
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{%
+   %% Beamer headlines and footlines are always full-paperwidth, so if you want the horizontal line to
+   %% not span it entirely you'll need to do a bit of arithmetic
+   \centering
+   \begin{minipage}{\dimexpr\paperwidth-\beamer@leftmargin-\beamer@rightmargin\relax}
+   \centering
+   \rule{\linewidth}{1pt}\vskip2pt
+   \usebeamerfont{footline}%
+   \usebeamercolor{footline}%
+
+   \hfill\insertpagenumber/\inserttotalframenumber
+   \hfill%
+
+   \llap{\insertframenavigationsymbol\insertbackfindforwardnavigationsymbol}\par
+   \end{minipage}\vskip2pt
+}
+
+\makeatother
+
+
+\title{Problema 5}
+\subtitle{CM4F1 - B}
+\author{Malvaceda Canales , Carlos Daniel}
+\institute{UNI}
+\date{Noviembre 2022}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+
+\section{Ejercicio 5}
+
+\begin{frame}{Problema 5}
+
+\noindent 5) Find and orthonormal basis for the column space of the matrix 
+
+\begin{equation*}
+   \begin{pmatrix}
+        3 & -5 & 1\\
+        1 & 1 & 1 \\ 
+        -1 & 5 & -2 \\
+        3 & -7 & 8 \\
+    \end{pmatrix} 
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}{Solución}
+    Hallaremos una base para el espacio columna al verificar la forma escalonada de forma reducidad por fila de A.
+    \begin{equation*}
+        \begin{pmatrix}
+        3 & -5 & 1\\
+        1 & 1 & 1 \\ 
+        -1 & 5 & -2 \\
+        3 & -7 & 8 \\
+    \end{pmatrix}
+    \sim 
+    \begin{pmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0 \\ 
+        0 & 0 & 1 \\
+        0 & 0 & 0 \\
+    \end{pmatrix}
+    \end{equation*}
+    Las bases columna para A 
+    
+    \begin{equation*}
+    \left \{
+        \begin{pmatrix}
+            3 \\ 1 \\ -1 \\ 3
+        \end{pmatrix} , 
+        \begin{pmatrix}
+            -5 \\ 1 \\ 5 \\ -7
+        \end{pmatrix} , 
+        \begin{pmatrix}
+            1 \\ 1 \\ -2 \\ 8 
+        \end{pmatrix}
+        \right\} 
+         = 
+         \{
+        x_1 ; x_2 : x_3
+         \}
+    \end{equation*}
+\end{frame}
+
+\begin{frame}{Continuación}
+Usando el proceso de Grand -Schmidt :
+Tenemos un conjunto de vectores L.I $\{ x_1 , x_2 , x_3 \}$ y bases ortogonales  $ v = \{ v_1 , v_2 , v_3 \} $
+\begin{equation*}
+    v_1 = x_1  
+\end{equation*}
+\begin{equation*}
+v_2 = x_2 - \frac{<x_2,v_1>}{\parallel v_1 \parallel ^2} v_1    
+\end{equation*}
+\begin{equation*}
+    v_3 = x_3 - \frac{<x_3,v_1>}{\parallel v_1 \parallel ^2} v_1 - \frac{<x_3,v_2>}{\parallel v_2 \parallel ^2} v_2
+\end{equation*}
+
+\end{frame}
+
+
+\begin{frame}{Continuación}
+
+     Paso 1 : $ v_1 = x_1 = \begin{pmatrix}
+     3 \\ 1 \\ -1 \\ 3
+    \end{pmatrix} $ \\
+    Paso 2 : 
+     $ v_2 = x_2 - \frac{<x_2,v_1>}{\parallel v_1 \parallel ^2} v_1   = \begin{pmatrix}
+         -5 \\ 1 \\ 5 \\ -7 
+     \end{pmatrix} - \frac{(-40)}{(20)} . \begin{pmatrix}
+         3 \\ 1 \\ -1 \\ 3
+     \end{pmatrix} = \begin{pmatrix}
+         1 \\ 3 \\ 3 \\ -1
+     \end{pmatrix}$ \\ 
+     \begin{equation*}
+         v_2 =\begin{pmatrix}
+         1 \\ 3 \\ 3 \\ -1
+     \end{pmatrix} 
+     \end{equation*}
+     
+\end{frame}
+
+\begin{frame}{Continuación}
+    Paso 3 : $ v_3 = x_3 - \frac{<x_3,v_1>}{\parallel v_1 \parallel ^2} v_1 - \frac{<x_3,v_2>}{\parallel v_2 \parallel ^2} v_2  = \begin{pmatrix}
+        1 \\ 1 \\ -2 \\ 8
+    \end{pmatrix} - \frac{(30)}{(20)} \begin{pmatrix}
+        3 \\ 1 \\ -1 \\ 3 
+    \end{pmatrix} - \frac{(-10)}{(20)} \begin{pmatrix}
+        1 \\ 3 \\ 3 \\ -1 
+    \end{pmatrix}$
+    \begin{equation*}
+         v_3 =\begin{pmatrix}
+         -3 \\ 1 \\ 1 \\ 3
+     \end{pmatrix} 
+     \end{equation*}
+
+\end{frame}
+
+\begin{frame}{Continuación}
+
+Las bases ortogonales para las columnas de A son :
+\begin{equation*}
+    \left \{ \begin{pmatrix}
+         3 \\ 1 \\ -1 \\ 3
+     \end{pmatrix} ,
+     \begin{pmatrix}
+         1 \\ 3 \\ 3 \\ -1
+     \end{pmatrix} , 
+     \begin{pmatrix}
+         -3 \\ 1 \\ 1 \\ 3
+     \end{pmatrix}\right
+     \} 
+\end{equation*}
+Las bases ortonormales son :
+\begin{equation*}
+    \left \{ \begin{pmatrix}
+         \frac{3}{\sqrt{20}} \\ \frac{1 }{\sqrt{20}} \\ \frac{-1}{\sqrt{20}} \\ \frac{3}{\sqrt{20}}
+     \end{pmatrix} ,
+     \begin{pmatrix}
+         \frac{1}{\sqrt{20}} \\ \frac{3}{\sqrt{20}} \\ \frac{3}{\sqrt{20}} \\ \frac{-1}{\sqrt{20}}
+     \end{pmatrix} , 
+     \begin{pmatrix}
+         \frac{-3}{\sqrt{20}} \\ \frac{1}{\sqrt{20}} \\ \frac{1}{\sqrt{20}} \\ \frac{3}{\sqrt{20}}
+      \end{pmatrix}\right
+     \} 
+\end{equation*}
+
+    
+\end{frame}
+
+
+\end{document}

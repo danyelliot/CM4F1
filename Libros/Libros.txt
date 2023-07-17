@@ -1,0 +1,3 @@
+E. Ward Cheney, David R. Kincaid - Numerical Mathematics and Computing-Cengage Learning (2012)
+Richard L. Burden, J. Douglas Faires, Annette M. Burden - Numerical Analysis-Cengage Learning (2015)
+Steven C. Chapra_ Raymond P. Canale - Numerical methods for engineers (2021)
